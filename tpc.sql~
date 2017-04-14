@@ -4,7 +4,7 @@ Create table Student(
   spassword varchar(10) not null,
   sEmailId varchar(15),
   cpi decimal(4,2) not null,
-  placementStatus int not null,
+  placementStatus bit(1) not null,
   placedCompany varchar(20),
   salary decimal(4,2)
 );
