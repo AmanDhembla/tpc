@@ -49,7 +49,7 @@ Create table CellMember(
   cid varchar(10) primary key,
   cname varchar(20) not null,
   cpassword varchar(10) not null,
-  cEmailId varchar(30);
+  cEmailId varchar(30),
   ContactNumber varchar(15) unique,
   year char(3),
   gender char(1),
