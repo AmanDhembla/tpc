@@ -16,7 +16,7 @@ public class TechCompany  {
 		 TechCompany t[]=new TechCompany[10];
 
 			try{
-				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root", "lnm@#$");
+				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject", "tpc");
 				SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
 				java.util.Date date1 = sdf1.parse(d1);
 				java.util.Date date2 = sdf1.parse(d2);
@@ -59,7 +59,7 @@ public class TechCompany  {
 		 
 		 try
 		 {
-			 Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root", "lnm@#$");
+			 Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject", "tpc");
 			 Statement stmt=con.createStatement();
 			 Statement stmt1=con.createStatement();
 			 String sql="select * from Company where cname='"+company+ "'";

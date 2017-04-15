@@ -14,8 +14,8 @@ public class TechStudent implements Student {
 	public void getDetails(String id) {
 		Connection con = null;
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false", "root",
-					"lnm@#$");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false", "tpcProject",
+					"tpc");
 
 			Statement stmt = con.createStatement();
 			Statement stmt1 = con.createStatement();

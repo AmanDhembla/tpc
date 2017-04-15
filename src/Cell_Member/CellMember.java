@@ -93,7 +93,7 @@ public class CellMember
 		
 		try
 		{
-			Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc","root","lnm@#$");
+			Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc","tpcProject","tpc");
 			
 			Statement stmt= con.createStatement();
 			ResultSet res= stmt.executeQuery("select * from CellMember");
