@@ -118,5 +118,35 @@ public class CellMember
 		}
 		
 	}
+	
+	public void changeStatus(String company,String sid)
+	 {try
+	 {
+		 Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject", "tpc");
+		 Statement stmt=con.createStatement();
+		 String sql="select * from Company where cname='"+company+ "'";
+		 int cid;
+		 double slry=0;
+		 ResultSet res=stmt.executeQuery(sql);
+		 while(res.next())
+		 {
+			 cid=res.getInt("cIN");
+			 slry=res.getDouble("salary");
+		 }
+		 Statement stmt1=con.createStatement();
+		 Statement stmt2=con.createStatement();
+		 Statement stmt3=con.createStatement();
+		 String sql1="update Student set placementStatus=1 where sid='"+sid+ "'";
+		 stmt1.executeUpdate(sql1);
+		 String sql2="update Student set salary='"+slry+ "' where sid='"+sid+ "'";
+		 stmt2.executeUpdate(sql2);
+		 String sql3="update Student set placedCompany='"+company+ "' where sid='"+sid+ "'";
+		 stmt3.executeUpdate(sql3);
+	 }
+	 catch(SQLException ex)
+	 {
+		 ex.printStackTrace();
+	 }
+	 }
 }
 	
