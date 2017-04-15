@@ -2,13 +2,15 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class NonTechCompany {
 
+public class NonTechCompany  {
+	
 	String req;
 	int id;
 	String name,emailId,city;
 	double cpi,salary;
 	Date visitdate;
+
 	 public NonTechCompany[] CompanyVisit(String d1,String d2)
 	 {
 		 NonTechCompany t[]=new NonTechCompany[10];
@@ -93,6 +95,43 @@ public class NonTechCompany {
 		 }
 		 
 		 return t;
+	 }
+	 
+	 
+	 public void showDetails(String cid)
+	 {	
+			try
+			{
+				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc","tpcProject","tpc");
+				
+				Statement stmt= con.createStatement();
+				ResultSet res= stmt.executeQuery("select * from Company");
+				while(res.next())
+				{
+					if(res.getString("cid").equals(cid))
+					{
+						id=res.getInt("cIN");
+						name=res.getString("cname");
+						emailId=res.getString("cEmailId");
+						cpi=res.getDouble("cpiCriteria");
+						city=res.getString("city");
+						salary=res.getDouble("salary");
+						visitdate=res.getDate("visitDate");	
+					}	
+				}
+				Statement stmt1= con.createStatement();
+				ResultSet res1= stmt1.executeQuery("select * from NonTechCompany where cIN='"+id+ "'");
+				while(res1.next())
+				{
+					req=res1.getString("requirements");
+				}
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			
+		
 	 }
 
 }

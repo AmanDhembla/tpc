@@ -4,13 +4,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class TechCompany  {
+public class TechCompany   {
+	
 	String req;
 	String branch;
 	int id;
 	String name,emailId,city;
 	double cpi,salary;
 	Date visitdate;
+	
 	 public TechCompany[] CompanyVisit(String d1,String d2)
 	 {
 		 TechCompany t[]=new TechCompany[10];
@@ -97,5 +99,41 @@ public class TechCompany  {
 		 return t;
 	 }
 	 
+	 public void showDetails(String cid)
+	 {	
+			try
+			{
+				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc","tpcProject","tpc");
+				
+				Statement stmt= con.createStatement();
+				ResultSet res= stmt.executeQuery("select * from Company");
+				while(res.next())
+				{
+					if(res.getString("cid").equals(cid))
+					{
+						id=res.getInt("cIN");
+						name=res.getString("cname");
+						emailId=res.getString("cEmailId");
+						cpi=res.getDouble("cpiCriteria");
+						city=res.getString("city");
+						salary=res.getDouble("salary");
+						visitdate=res.getDate("visitDate");	
+					}	
+				}
+				Statement stmt1= con.createStatement();
+				ResultSet res1= stmt1.executeQuery("select * from TechCompany where cIN='"+id+ "'");
+				while(res1.next())
+				{
+					branch=res1.getString("branch");
+					req=res1.getString("requirements");
+				}
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			
+		
+	 }
 
 }
