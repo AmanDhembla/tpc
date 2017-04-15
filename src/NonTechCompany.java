@@ -32,7 +32,7 @@ public class NonTechCompany {
 					t[i].cpi=res.getDouble("cpiCriteria");
 					t[i].id=res.getInt("cIN");
 					t[i].salary=res.getDouble("salary");
-					String sql1="select * from TechCompany where cIN='"+t[i].id+ "' ";
+					String sql1="select * from NonTechCompany where cIN='"+t[i].id+ "' ";
 					ResultSet res1=stmt1.executeQuery(sql1);
 					while(res1.next())
 					{
