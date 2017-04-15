@@ -15,7 +15,7 @@ public class student {
 		try{
 			//System.out.println("amana cdsjf");
 			Class.forName("com.mysql.jdbc.Driver");
-		    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","lnm@#$");
+		    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 
 		//System.out.println(con);
 		Statement stmt=con.createStatement();

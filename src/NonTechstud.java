@@ -16,7 +16,7 @@ public class NonTechstud implements Student{
 		Connection con=null;
 		try
 		{
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","sanya1234");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 			
 			Statement stmt=con.createStatement();
 		

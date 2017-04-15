@@ -33,7 +33,7 @@ public class tpo {
 		Connection con=null;
 			try
 			{
-				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","lnm@#$");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 				
 				String a="insert into Student(sid,sname,spassword,sEmailId,cpi,placementStatus,placedCompany,salary) "
 						+ "values(?,?,?,?,?,?,?,?)";
@@ -69,7 +69,7 @@ public class tpo {
 			try
 			{
 				String sql;
-				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","lnm@#$");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 				PreparedStatement ps;
 				 
 				if(field.equals("sname")){
@@ -162,7 +162,7 @@ public class tpo {
 		Connection con=null;
 			try
 			{
-				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","lnm@#$");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 				
 				String a="insert into Student(sid,sname,spassword,sEmailId,cpi,placementStatus,placedCompany,salary) "
 						+ "values(?,?,?,?,?,?,?,?)";
@@ -200,7 +200,7 @@ public void editNonTechStudent(String field,String id,String attribute)
 		try
 		{
 			String sql;
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","lnm@#$");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 			PreparedStatement ps;
 			 
 			if(field.equals("sname")){
@@ -277,7 +277,7 @@ public void editCellMember(String field,String id,String attribute){
 	try
 	{
 		String sql;
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","lnm@#$");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 		PreparedStatement ps;
 		if(field.equals("cname")){
 			System.out.println("i m sukki");
@@ -342,7 +342,7 @@ public void insertCellMember(String cid,String cname,String password,String emai
 	Connection con=null;
 		try
 		{
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","lnm@#$");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","tpcProject","tpc");
 			
 			String a="insert into CellMember values(?,?,?,?,?,?,?,?)";
 			
