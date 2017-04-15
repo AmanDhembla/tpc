@@ -1,5 +1,5 @@
 package Cell_Member;
-
+import java.util.Date;
 
 import java.sql.*;
 public class CellMember 
@@ -148,5 +148,8 @@ public class CellMember
 		 ex.printStackTrace();
 	 }
 	 }
+	public void insertCompany(int cIN,String cname,String cemailId,double cpi,String city,Date visitdate,double salary){
+		
+	}
 }
 	
